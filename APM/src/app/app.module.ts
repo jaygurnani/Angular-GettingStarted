@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
+import { ConvertToSpacesPipe } from './shared/convert-to-space';
+
 
 // Our components are declared in the declarations while Angular and custom ones are declare in the imports section
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,

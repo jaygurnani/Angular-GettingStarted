@@ -6,7 +6,7 @@
         <div class='row'>
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
-                <!-- NgModel is used in input boxes, hence we just bind here-->
+                <!-- JayG: NgModel is used in input boxes, hence we just bind here-->
                 <input type='text' [(ngModel)]='listFilter'/>
             </div>
         </div>
@@ -33,10 +33,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of filteredProducts'>
                         <td>
-                             <!-- Pipes can be done here as well-->
-                             <!--Property binding need to be using [] to be bound -->
+                             <!-- JayG: Pipes can be done here as well-->
+                             <!-- JayG: Property binding need to be using [] to be bound -->
                             <img *ngIf='showImage' 
                             [src]='product.imageUrl' 
                             [title]='product.productName' 
@@ -44,9 +44,10 @@
                             [style.margin.px] = 'imageMargin' />
                         </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode | lowercase }}</td>
+                        <!-- JayG: Parameters are passed in using '' -->
+                        <td>{{product.productCode | lowercase | convertToSpaces:'-' }}</td>
                         <td>{{product.releaseDate}}</td>
-                        <!-- Pipes can be done here-->
+                        <!-- JayG: Pipes can be done here-->
                         <td>{{product.price | currency:'GBP':true:'1.2-2'}}</td>
                         <td>{{product.starRating}}  </td>
                     </tr>
