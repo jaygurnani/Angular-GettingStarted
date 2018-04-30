@@ -49,6 +49,11 @@ export class ProductListComponent implements OnInit {
         this.listFilter = 'cart';
     }
 
+    onRatingClicked(message: string) {
+        this.pageTitle = 'Product List: ' + message;
+    }
+
+    // JayG You can run lambda functions in Typescript
     performFilter(filterBy: string): IProduct[] {
        filterBy = filterBy.toLocaleLowerCase();
        return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);

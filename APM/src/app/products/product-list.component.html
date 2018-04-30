@@ -49,7 +49,8 @@
                         <td>{{product.releaseDate}}</td>
                         <!-- JayG: Pipes can be done here-->
                         <td>{{product.price | currency:'GBP':true:'1.2-2'}}</td>
-                        <td>{{product.starRating}}  </td>
+                        <!-- When the start rating clicked event is raised, we pass this data to the product onRatingClicked() function-->
+                        <td><pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
                     </tr>
                 </tbody>
             </table>
