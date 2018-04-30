@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-space';
 import { StarComponent } from './shared/star.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 // JayG: Our components are declared in the declarations while Angular and custom ones are declare in the imports section
 @NgModule({
@@ -17,7 +17,8 @@ import { StarComponent } from './shared/star.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
