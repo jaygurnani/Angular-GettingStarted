@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule } from '@angular/router';
+import { ProductGuardService } from './products/product-guard.service.service';
 
 // JayG: Our components are declared in the declarations while Angular and custom ones are declare in the imports section
 @NgModule({
@@ -28,13 +29,16 @@ import { RouterModule } from '@angular/router';
     // in downwards order
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'product/:id', component: ProductDetailComponent},
+      // JayG: For activating the guard we have to list it here
+      { path: 'products/:id', canActivate: [ProductGuardService],
+                              component: ProductDetailComponent},
       { path: 'welcome', component: WelcomeComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full'},
       { path: '** ', redirectTo: 'welcome', pathMatch: 'full'}
     ])
   ],
-  providers: [],
+  // JayG: Services pertaining to routing are registered here and not in app.component.ts
+  providers: [ProductGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -43,7 +43,8 @@
                             [style.width.px] = 'imageWidth'
                             [style.margin.px] = 'imageMargin' />
                         </td>
-                        <td>{{product.productName}}</td>
+                        <!-- You can pass in parameters into the router link here-->
+                        <td><a [routerLink]= "['/products', product.productId]">{{product.productName}}</a></td>
                         <!-- JayG: Parameters are passed in using '' -->
                         <td>{{product.productCode | lowercase | convertToSpaces:'-' }}</td>
                         <td>{{product.releaseDate}}</td>
