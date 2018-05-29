@@ -39,6 +39,7 @@ import { ProductGuardService } from './products/product-guard.service.service';
   ],
   // JayG: Services pertaining to routing are registered here and not in app.component.ts
   providers: [ProductGuardService],
+  // JayG: Bootstrap array should only be used once (only in App.Module)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
