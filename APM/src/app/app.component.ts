@@ -20,10 +20,7 @@ import { ProductService } from './products/product.service';
         <router-outlet></router-outlet>
       </div>
     </div>
-  `,
-  // JayG: This is how we register the services. All children can access this service
-  // JayG: There is no need to export services since everyone will have access to this already
-  providers: [ProductService]
+  `
 })
 export class AppComponent {
   pageTitle: string = 'Acme Product Management';
