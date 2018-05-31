@@ -3,6 +3,7 @@ import { ProductService } from './products/product.service';
 
 // JayG: You can either use a directive (nesting) to show the page or use routing.
 // Routing must be use the [routerLink] syntax
+// JayG: {{}} is one way binding
 @Component({
   selector: 'pm-root',
   template: `
